@@ -19,9 +19,10 @@ public class JumpController : MonoBehaviour
     // Called every physics frame
     private void FixedUpdate()
     {
-        if(onGround && Input.GetButton("Jump"))
+        if(onGround && Input.GetAxis("Jump")>0)
         {
             parentRb.AddForce(jumpForce);
+			Debug.Log("jump !");
         }
     }
 

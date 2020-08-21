@@ -23,5 +23,17 @@ public class CharacterController : MonoBehaviour
     private void FixedUpdate()
     {
         rb.AddForce(movesMultiplier * new Vector2(Input.GetAxis("Horizontal") * (jc.onGround ? 1 : airControl), 0));
+		float tileNumber = Mathf.FloorToInt(transform.position.x);
+		//Debug.Log(tileNumber);
     }
+	
+
+    // Manages whether the character is on the groud or not
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+		if (collision.tag == "Spike") {
+			Debug.Log("Dead");
+		}
+    }
+	
 }
