@@ -1,26 +1,27 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class CharacterController : MonoBehaviour
 {
-    Rigidbody2D rb;
+    [Header("Game Objects")]
+    public Rigidbody2D rb;
+
+    [Header("Multipliers")]
     public Vector2 movesMultiplier;
+    public float airControl = 0.5f;
+
+    JumpController jc;
 
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        if(rb==null)
+            rb = GetComponent<Rigidbody2D>();
+        jc = GetComponentInChildren<JumpController>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    // Called every physics frame
     private void FixedUpdate()
     {
-        rb.AddForce(movesMultiplier * new Vector2(Input.GetAxis("Horizontal"), 0));
+        rb.AddForce(movesMultiplier * new Vector2(Input.GetAxis("Horizontal") * (jc.onGround ? 1 : airControl), 0));
     }
 }
