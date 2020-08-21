@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class QuikMouve : MonoBehaviour
 {
+
+    [Header("Attribute")]
+    public GameObject destination;
+	
     // Start is called before the first frame update
     void Start()
     {
@@ -21,11 +25,13 @@ public class QuikMouve : MonoBehaviour
 	
 	}
 	
-	private void OnTriggerEnter2D(Collider2D collision)
-	{
-		if (collision.tag == "Player")
-		{
-			Debug.Log("test");
-		}
-	}
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.tag == "Player")
+        {
+            Debug.Log(destination.transform.position);
+			collision.transform.position = destination.transform.position;
+			collision.attachedRigidbody.velocity = Vector2.zero;
+        }
+    }
 }
