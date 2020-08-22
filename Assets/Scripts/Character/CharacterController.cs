@@ -52,12 +52,12 @@ public class CharacterController : MonoBehaviour
             if (Input.GetButton("Fire1") || Input.GetButton("Fire2") || Input.GetButton("Fire3")) {
                 isPressedFire2 = true;
                 meneger.blocPosition = !meneger.blocPosition;
-                Debug.Log("Fire !");
+                // Debug.Log("Fire !");
             }
         } else {
             if (!(Input.GetButton("Fire1") || Input.GetButton("Fire2") || Input.GetButton("Fire3"))) {
                 isPressedFire2 = false;
-                Debug.Log("End");
+                // Debug.Log("End");
             }
         }
         // Debug.Log(rb.velocity);
