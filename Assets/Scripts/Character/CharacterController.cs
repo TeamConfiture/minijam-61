@@ -20,6 +20,10 @@ public class CharacterController : MonoBehaviour
     bool jumpRequest;
     int jumpNb;
 
+    GameManager meneger = null;
+
+    bool isPressedFire2 = false;
+	
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +34,8 @@ public class CharacterController : MonoBehaviour
         animator = GetComponent<Animator>();
         jumpRequest = false;
         jumpNb = 0;
+
+        meneger = GameManager.Instance;
     }
 
     private void Update() {
@@ -53,6 +59,19 @@ public class CharacterController : MonoBehaviour
             jumpRequest = true;
             jumpNb++;
         }
+        if (!isPressedFire2) {
+            if (Input.GetButton("Fire1") || Input.GetButton("Fire2") || Input.GetButton("Fire3")) {
+                isPressedFire2 = true;
+                meneger.blocPosition = !meneger.blocPosition;
+                // Debug.Log("Fire !");
+            }
+        } else {
+            if (!(Input.GetButton("Fire1") || Input.GetButton("Fire2") || Input.GetButton("Fire3"))) {
+                isPressedFire2 = false;
+                // Debug.Log("End");
+            }
+        }
+        // Debug.Log(rb.velocity);
     }
 
     // Called every physics frame
