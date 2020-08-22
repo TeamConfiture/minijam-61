@@ -23,6 +23,7 @@ public class CharacterController : MonoBehaviour
     GameManager meneger = null;
 
     bool isPressedFire2 = false;
+    Rigidbody2D rbFeet;
 	
     // Start is called before the first frame update
     void Start()
@@ -34,6 +35,7 @@ public class CharacterController : MonoBehaviour
         animator = GetComponent<Animator>();
         jumpRequest = false;
         jumpNb = 0;
+        rbFeet = transform.GetChild(0).GetComponent<Rigidbody2D>();
 
         meneger = GameManager.Instance;
     }
@@ -79,7 +81,7 @@ public class CharacterController : MonoBehaviour
     {
         if (jumpRequest) //Jump impulsion
         {
-            rb.AddForce(Vector2.up * jumpVelocity, ForceMode2D.Impulse);
+            rb.AddForce(Vector2.up * jumpVelocity * (rb.velocity.y < 0 ? 2 : 1), ForceMode2D.Impulse);
             jumpRequest = false;
         }
         if (rb.velocity.y < 0) // Falling down
@@ -112,7 +114,11 @@ public class CharacterController : MonoBehaviour
 		if (collision.tag == "Spike") {
 			this.Death();
 		}
+        
+    }
+
+    public void FeetCollision()
+    {
         jumpNb = 0;
     }
-	
 }

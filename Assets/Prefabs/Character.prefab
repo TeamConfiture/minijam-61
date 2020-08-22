@@ -123,7 +123,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
   moveMultiplier: 7
-  jumpVelocity: 5
+  jumpVelocity: 10
   fallMultiplier: 2.5
   lowJumpMultiplier: 2
   isAlive: 1
@@ -268,6 +268,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2798464665051267374}
   - component: {fileID: 2798464665051267375}
+  - component: {fileID: 2798464665051267372}
   m_Layer: 8
   m_Name: Feet
   m_TagString: Untagged
@@ -315,3 +316,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.38, y: 0.38}
   m_EdgeRadius: 0
+--- !u!114 &2798464665051267372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2798464665051267369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e1af01e8cac0604d88b0d281831a052, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
