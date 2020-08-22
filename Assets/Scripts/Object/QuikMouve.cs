@@ -7,6 +7,8 @@ public class QuikMouve : MonoBehaviour
 
     [Header("Attribute")]
     public GameObject destination;
+    public Transform nextCameraPosition;
+
 	AudioSource audioSource;
 	
 	
@@ -35,6 +37,9 @@ public class QuikMouve : MonoBehaviour
             Debug.Log(destination.transform.position);
 			collision.transform.position = destination.transform.position;
 			collision.attachedRigidbody.velocity = Vector2.zero;
+
+            if(nextCameraPosition != null)
+                Camera.main.transform.position = nextCameraPosition.position;
         }
     }
 }

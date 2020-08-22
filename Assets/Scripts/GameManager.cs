@@ -6,6 +6,10 @@ public class GameManager : MonoBehaviour
 {
     [Header("Game Attributes")]
     public bool blocPosition = false;
+    [Header("Game Status")]
+    public bool[] obtainedStatus = new bool[3] {false, false, false};
+
+
 
     public static GameManager Instance;
 
@@ -21,5 +25,14 @@ public class GameManager : MonoBehaviour
         }
         DontDestroyOnLoad(gameObject);
         Instance = this;
+    }
+
+    public void GetArtifact(int artifactId) {
+        Debug.Log("Obtained Artifact !");
+        if (artifactId < 1 || artifactId > 3) {
+            Debug.Log("Wrong ID !!!");
+        } else {
+            obtainedStatus[artifactId+1] = true;
+        }
     }
 }
