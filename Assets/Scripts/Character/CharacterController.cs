@@ -14,6 +14,7 @@ public class CharacterController : MonoBehaviour
 
     JumpController jc;
 	AudioSource audioSource;
+    Animator animator;
 	
     // Start is called before the first frame update
     void Start()
@@ -22,6 +23,26 @@ public class CharacterController : MonoBehaviour
             rb = GetComponent<Rigidbody2D>();
         jc = GetComponentInChildren<JumpController>();
 		audioSource = GetComponent<AudioSource>();
+        // timer = changeTime;
+        animator = GetComponent<Animator>();
+    }
+
+    void Update() {
+        if ((rb.velocity.y < 0.01f) && (rb.velocity.y > -0.01f)) {
+            animator.SetFloat("SpeedY", 0.0f);
+        } else if (rb.velocity.y > 0) {
+            animator.SetFloat("SpeedY", 1.0f);
+        } else {
+            animator.SetFloat("SpeedY", -1.0f);
+        }
+        if ((Input.GetAxis("Horizontal") < 0.01f) && (Input.GetAxis("Horizontal") > -0.01f)) {
+            animator.SetFloat("SpeedX", 0.0f);
+        } else if (Input.GetAxis("Horizontal") > 0) {
+            animator.SetFloat("SpeedX", 1.0f);
+        } else {
+            animator.SetFloat("SpeedX", -1.0f);
+        }
+        // Debug.Log(rb.velocity);
     }
 
     // Called every physics frame

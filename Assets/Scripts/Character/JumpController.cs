@@ -22,7 +22,7 @@ public class JumpController : MonoBehaviour
         if(onGround && Input.GetAxis("Jump")>0)
         {
             parentRb.AddForce(jumpForce);
-			Debug.Log("jump !");
+			// Debug.Log("jump !");
         }
     }
 
