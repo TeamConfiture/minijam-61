@@ -9,6 +9,9 @@ public class CharacterController : MonoBehaviour
     public Vector2 movesMultiplier;
     public float airControl = 0.5f;
 
+    [Header("Multipliers")]
+    public bool isAlive = true;
+
     JumpController jc;
 
     // Start is called before the first frame update
@@ -27,12 +30,18 @@ public class CharacterController : MonoBehaviour
 		//Debug.Log(tileNumber);
     }
 	
+    void Death() {
+        if (this.isAlive) {
+            this.isAlive = false;
+            Debug.Log("Dead !");
+        }
+    }
 
     // Manages whether the character is on the groud or not
     private void OnTriggerEnter2D(Collider2D collision)
     {
 		if (collision.tag == "Spike") {
-			Debug.Log("Dead");
+			this.Death();
 		}
     }
 	
