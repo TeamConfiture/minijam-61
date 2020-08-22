@@ -248,6 +248,7 @@ MonoBehaviour:
   InteractionPopup: {fileID: 1585673080}
   Interacting: 0
   chat: {fileID: 1905930889}
+  dialogue: {fileID: 4900000, guid: ef77477d031b18c45bd5b56afdf01130, type: 3}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1494,7 +1495,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 154135943c2c55246aa54fd04b7cd6a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jsonFile: {fileID: 4900000, guid: ef77477d031b18c45bd5b56afdf01130, type: 3}
+  jsonFile: {fileID: 0}
   nameText: {fileID: 1934854563}
   lineText: {fileID: 1801021149}
 --- !u!1 &1934854561

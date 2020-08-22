@@ -15,17 +15,17 @@ public class DialogueManager : MonoBehaviour
 
     private int line = -1;
 
-    private void Awake()
-    {
-        Dial = JsonUtility.FromJson<Dialogue>(jsonFile.text);
-        Debug.Log(jsonFile.text);
-        Debug.Log(Dial);
-        Debug.Log(Dial.lines.Count);
-    }
-
     private void OnEnable()
     {
         GameManager.Instance.Interacting = true;
+        line = -1;
+        NextLine();
+    }
+
+    public void SetDialogue(TextAsset dialogue)
+    {
+        jsonFile = dialogue;
+        Dial = JsonUtility.FromJson<Dialogue>(jsonFile.text);
         line = -1;
         NextLine();
     }

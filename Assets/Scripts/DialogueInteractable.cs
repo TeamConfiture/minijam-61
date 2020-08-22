@@ -6,6 +6,7 @@ using UnityEngine;
 public class DialogueInteractable : Interactable
 {
     public DialogueManager chat;
+    public TextAsset dialogue;
 
     private void Awake()
     {
@@ -23,5 +24,6 @@ public class DialogueInteractable : Interactable
     public override void Interact()
     {
         chat.gameObject.SetActive(true);
+        chat.SetDialogue(dialogue);
     }
 }
