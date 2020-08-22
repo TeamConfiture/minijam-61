@@ -18,8 +18,7 @@ public class DialogueManager : MonoBehaviour
     private void OnEnable()
     {
         GameManager.Instance.Interacting = true;
-        line = -1;
-        NextLine();
+        SetDialogue(jsonFile);
     }
 
     public void SetDialogue(TextAsset dialogue)
