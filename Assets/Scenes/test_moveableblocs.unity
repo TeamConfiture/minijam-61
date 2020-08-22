@@ -2445,6 +2445,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6651666736997704887, guid: c32fc35b728ece544b19958af7a4c595,
+        type: 3}
+      propertyPath: obtainedStatus.Array.data[2]
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6651666736997704888, guid: c32fc35b728ece544b19958af7a4c595,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2507,38 +2512,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c32fc35b728ece544b19958af7a4c595, type: 3}
---- !u!1 &680932466 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2302945074604223461, guid: 20049fb4cb22fc7e3963cc500bedf63c,
-    type: 3}
-  m_PrefabInstance: {fileID: 3113418896921927225}
-  m_PrefabAsset: {fileID: 0}
---- !u!61 &680932467
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 680932466}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.98, y: 1.5}
-    newSize: {x: 1.98, y: 1.5}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.98, y: 1.5}
-  m_EdgeRadius: 0
 --- !u!1 &820380445
 GameObject:
   m_ObjectHideFlags: 0
@@ -2801,11 +2774,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8676595167531576715, guid: 20049fb4cb22fc7e3963cc500bedf63c,
-        type: 3}
-      propertyPath: artifactId
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 20049fb4cb22fc7e3963cc500bedf63c, type: 3}
