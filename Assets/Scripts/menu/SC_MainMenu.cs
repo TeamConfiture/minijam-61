@@ -6,7 +6,6 @@ public class SC_MainMenu : MonoBehaviour
 {
     public GameObject MainMenu;
     public GameObject CreditsMenu;
-    public GameObject OptionsMenu;
     // Start is called before the first frame update
     public void Start()
     {
@@ -14,24 +13,22 @@ public class SC_MainMenu : MonoBehaviour
     }
 
     public void PlayNowButton() {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("testSpikes");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Level1");
     }
     public void CreditsButton() {
         MainMenu.SetActive(false);
         CreditsMenu.SetActive(true);
-        OptionsMenu.SetActive(false);
     }
     public void MainMenuButton() {
         MainMenu.SetActive(true);
         CreditsMenu.SetActive(false);
-        OptionsMenu.SetActive(false);
     }
     public void QuitButton() {
         Application.Quit();
     }
-    public void OptionsButtons() {
-        MainMenu.SetActive(false);
+    public void backButton() {
+        MainMenu.SetActive(true);
         CreditsMenu.SetActive(false);
-        OptionsMenu.SetActive(true);
     }
+   
 }
