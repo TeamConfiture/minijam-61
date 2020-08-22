@@ -9,14 +9,40 @@ public class CharacterController : MonoBehaviour
     public Vector2 movesMultiplier;
     public float airControl = 0.5f;
 
-    JumpController jc;
+    [Header("Attributes")]
+    public bool isAlive = true;
 
+    JumpController jc;
+	AudioSource audioSource;
+    Animator animator;
+	
     // Start is called before the first frame update
     void Start()
     {
         if(rb==null)
             rb = GetComponent<Rigidbody2D>();
         jc = GetComponentInChildren<JumpController>();
+		audioSource = GetComponent<AudioSource>();
+        // timer = changeTime;
+        animator = GetComponent<Animator>();
+    }
+
+    void Update() {
+        if ((rb.velocity.y < 0.01f) && (rb.velocity.y > -0.01f)) {
+            animator.SetFloat("SpeedY", 0.0f);
+        } else if (rb.velocity.y > 0) {
+            animator.SetFloat("SpeedY", 1.0f);
+        } else {
+            animator.SetFloat("SpeedY", -1.0f);
+        }
+        if ((Input.GetAxis("Horizontal") < 0.01f) && (Input.GetAxis("Horizontal") > -0.01f)) {
+            animator.SetFloat("SpeedX", 0.0f);
+        } else if (Input.GetAxis("Horizontal") > 0) {
+            animator.SetFloat("SpeedX", 1.0f);
+        } else {
+            animator.SetFloat("SpeedX", -1.0f);
+        }
+        // Debug.Log(rb.velocity);
     }
 
     // Called every physics frame
@@ -27,12 +53,19 @@ public class CharacterController : MonoBehaviour
 		//Debug.Log(tileNumber);
     }
 	
+    void Death() {
+        if (this.isAlive) {
+            this.isAlive = false;
+            Debug.Log("Dead !");
+			audioSource.Play();
+        }
+    }
 
     // Manages whether the character is on the groud or not
     private void OnTriggerEnter2D(Collider2D collision)
     {
 		if (collision.tag == "Spike") {
-			Debug.Log("Dead");
+			this.Death();
 		}
     }
 	
