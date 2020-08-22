@@ -13,7 +13,7 @@ public class SC_MainMenu : MonoBehaviour
     }
 
     public void PlayNowButton() {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("GameLevel");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("testSpikes");
     }
     public void CreditsButton() {
         MainMenu.SetActive(false);
