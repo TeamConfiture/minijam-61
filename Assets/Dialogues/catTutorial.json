@@ -1,0 +1,13 @@
+{
+    "lines":
+    [
+        {
+            "name":"Cat",
+            "line":"My Name is Bastet."
+        },
+        {
+            "name":"Bastet",
+            "line":"Nice to meet you."
+        }
+    ]
+}
