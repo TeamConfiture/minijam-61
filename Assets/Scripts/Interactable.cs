@@ -4,35 +4,44 @@ using UnityEngine;
 
 public class Interactable : MonoBehaviour
 {
-    public string StartInteraction = "Fire1";
+    public string InteractionCommand = "Fire1";
+    public string InteractionText = "{0} to talk";
+    public GameObject InteractionPopup;
+
     public bool Interacting = false;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Enter " + collision.tag);
         if (collision.tag == "Player")
         {
-            GameManager.Instance.Interacting = true;
-            Interacting = true;
+            MakeInteractable(true);
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        Debug.Log("Exit " + collision.tag);
         if(collision.tag == "Player")
         {
-            GameManager.Instance.Interacting = false;
-            Interacting = false;
+            MakeInteractable(false);
         }
+    }
+
+    public void MakeInteractable(bool interactable)
+    {
+        GameManager.Instance.Interacting = interactable;
+        Interacting = interactable;
+
+        if (InteractionPopup != null)
+            InteractionPopup.SetActive(interactable);
+
     }
 
     private void Update()
     {
-        if(Input.GetButtonDown(StartInteraction))
+        if(Interacting && Input.GetButtonDown(InteractionCommand))
         {
+            MakeInteractable(false);
             Interact();
-            Interacting = false;
         }
     }
 
