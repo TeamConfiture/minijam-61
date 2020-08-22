@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    [Header("Game Attributes")]
+    public bool blocPosition = false;
+
     public static GameManager Instance;
 
     public string someDataToSave = "nothing";

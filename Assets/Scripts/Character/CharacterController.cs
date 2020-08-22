@@ -15,6 +15,9 @@ public class CharacterController : MonoBehaviour
     JumpController jc;
 	AudioSource audioSource;
     Animator animator;
+    GameManager meneger = null;
+
+    bool isPressedFire2 = false;
 	
     // Start is called before the first frame update
     void Start()
@@ -25,6 +28,8 @@ public class CharacterController : MonoBehaviour
 		audioSource = GetComponent<AudioSource>();
         // timer = changeTime;
         animator = GetComponent<Animator>();
+
+        meneger = GameManager.Instance;
     }
 
     void Update() {
@@ -41,6 +46,19 @@ public class CharacterController : MonoBehaviour
             animator.SetFloat("SpeedX", 1.0f);
         } else {
             animator.SetFloat("SpeedX", -1.0f);
+        }
+
+        if (!isPressedFire2) {
+            if (Input.GetButton("Fire1") || Input.GetButton("Fire2") || Input.GetButton("Fire3")) {
+                isPressedFire2 = true;
+                meneger.blocPosition = !meneger.blocPosition;
+                Debug.Log("Fire !");
+            }
+        } else {
+            if (!(Input.GetButton("Fire1") || Input.GetButton("Fire2") || Input.GetButton("Fire3"))) {
+                isPressedFire2 = false;
+                Debug.Log("End");
+            }
         }
         // Debug.Log(rb.velocity);
     }
