@@ -7,11 +7,13 @@ public class QuikMouve : MonoBehaviour
 
     [Header("Attribute")]
     public GameObject destination;
+	AudioSource audioSource;
 	
-    // Start is called before the first frame update
+	
+    // Start is c alled before the first frame update
     void Start()
     {
-        
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -29,6 +31,7 @@ public class QuikMouve : MonoBehaviour
     {
         if(collision.tag == "Player")
         {
+			audioSource.Play();
             Debug.Log(destination.transform.position);
 			collision.transform.position = destination.transform.position;
 			collision.attachedRigidbody.velocity = Vector2.zero;
