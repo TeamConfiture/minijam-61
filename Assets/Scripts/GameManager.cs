@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
-    public string someDataToSave = "nothing";
+    public bool Interacting = false;
 
     // Start is called before the first frame update
     void Awake()

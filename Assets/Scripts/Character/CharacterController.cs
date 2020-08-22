@@ -28,13 +28,11 @@ public class CharacterController : MonoBehaviour
     private void FixedUpdate()
     {
         rb.AddForce(movesMultiplier * new Vector2(Input.GetAxis("Horizontal") * (jc.onGround ? 1 : airControl), 0));
-		float tileNumber = Mathf.FloorToInt(transform.position.x);
-		//Debug.Log(tileNumber);
     }
 	
     void Death() {
-        if (this.isAlive) {
-            this.isAlive = false;
+        if (isAlive) {
+            isAlive = false;
             Debug.Log("Dead !");
 			audioSource.Play();
         }
