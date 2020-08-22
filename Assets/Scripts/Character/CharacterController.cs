@@ -9,7 +9,7 @@ public class CharacterController : MonoBehaviour
     public Vector2 movesMultiplier;
     public float airControl = 0.5f;
 
-    [Header("Multipliers")]
+    [Header("Attributes")]
     public bool isAlive = true;
 
     JumpController jc;
