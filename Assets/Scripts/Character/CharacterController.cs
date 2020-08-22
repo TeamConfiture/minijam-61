@@ -15,7 +15,6 @@ public class CharacterController : MonoBehaviour
     JumpController jc;
 	AudioSource audioSource;
     Animator animator;
-    Vector2 lookDirection = new Vector2(1,0);
 	
     // Start is called before the first frame update
     void Start()
@@ -29,19 +28,19 @@ public class CharacterController : MonoBehaviour
     }
 
     void Update() {
-        if (rb.velocity.x > 0) {
-            animator.SetFloat("Move X", (float)0.5);
-        } else if (rb.velocity.x < 0) {
-            animator.SetFloat("Move X", (float)-0.5);
+        if ((rb.velocity.y < 0.01f) && (rb.velocity.y > -0.01f)) {
+            animator.SetFloat("SpeedY", 0.0f);
+        } else if (rb.velocity.y > 0) {
+            animator.SetFloat("SpeedY", 1.0f);
         } else {
-            animator.SetFloat("Move X", (float)0.0);
+            animator.SetFloat("SpeedY", -1.0f);
         }
-        if (rb.velocity.y > 0) {
-            animator.SetFloat("Move Y", (float)0.5);
-        } else if (rb.velocity.y < 0) {
-            animator.SetFloat("Move Y", (float)-0.5);
+        if ((Input.GetAxis("Horizontal") < 0.01f) && (Input.GetAxis("Horizontal") > -0.01f)) {
+            animator.SetFloat("SpeedX", 0.0f);
+        } else if (Input.GetAxis("Horizontal") > 0) {
+            animator.SetFloat("SpeedX", 1.0f);
         } else {
-            animator.SetFloat("Move Y", (float)0.0);
+            animator.SetFloat("SpeedX", -1.0f);
         }
         // Debug.Log(rb.velocity);
     }
