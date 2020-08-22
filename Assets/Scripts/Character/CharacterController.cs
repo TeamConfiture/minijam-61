@@ -13,13 +13,15 @@ public class CharacterController : MonoBehaviour
     public bool isAlive = true;
 
     JumpController jc;
-
+	AudioSource audioSource;
+	
     // Start is called before the first frame update
     void Start()
     {
         if(rb==null)
             rb = GetComponent<Rigidbody2D>();
         jc = GetComponentInChildren<JumpController>();
+		audioSource = GetComponent<AudioSource>();
     }
 
     // Called every physics frame
@@ -34,6 +36,7 @@ public class CharacterController : MonoBehaviour
         if (this.isAlive) {
             this.isAlive = false;
             Debug.Log("Dead !");
+			audioSource.Play();
         }
     }
 
