@@ -7,6 +7,7 @@ TagManager:
   - Spike
   - Rain
   - Plant
+  - WaterWithLog
   layers:
   - Default
   - TransparentFX
