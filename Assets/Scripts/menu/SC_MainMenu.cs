@@ -11,7 +11,7 @@ public class SC_MainMenu : MonoBehaviour
     // Start is called before the first frame update
     public void Start()
     {
-        MainMenuButton();
+
     }
 
     public void PlayNowButton(string scene) {
@@ -19,8 +19,8 @@ public class SC_MainMenu : MonoBehaviour
         soundEffect.Play();
     }
     public void CreditsButton() {
-        MainMenu.SetActive(false);
         CreditsMenu.SetActive(true);
+        MainMenu.SetActive(false);
         soundEffect.Play();
     }
     public void MainMenuButton() {
