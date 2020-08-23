@@ -1,0 +1,46 @@
+{
+  "leftImage": "steve.png",
+  "rightImage": "sobek.png",
+  "lines": [
+    {
+      "name": "Crocodile",
+      "line": "Who dares disturb my sleep!"
+    },
+    {
+      "name": "Crocodile",
+      "line": "A human, what a treat."
+    },
+    {
+      "name": "Crocodile",
+      "line": "I am Sobek, son of Neith, master of tides and god of the Nile."
+    },
+    {
+      "name": "Sobek",
+      "line": "And who are you little human? Are you bringing me entertainment?"
+    },
+    {
+      "name": "Steve",
+      "line": "I am Steve Jones, proud archeologist and expert in ancient Egypt. I am here to complete your trial and get your artefact."
+    },
+    {
+      "name": "Sobek",
+      "line": "So you are here to steal my properties! How would a god like me be stupid enough to let you go without trouble?"
+    },
+    {
+      "name": "Sobek",
+      "line": "You know what? I defintly am stupid enough to let you do that. I will even help you in your quest."
+    },
+    {
+      "name": "Sobek",
+      "line": "Here is my personnal cloud. Take it with you and taste the power of rain."
+    },
+    {
+      "name": "Sobek",
+      "line": "Do not get me wrong here. I do not trust your abilities to complete my trial. But it may end up as a great show."
+    },
+    {
+      "name": "Sobek",
+      "line": "Entertain me, little Steve."
+    },
+  ]
+}
