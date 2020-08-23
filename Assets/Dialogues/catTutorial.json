@@ -1,13 +1,14 @@
 {
-    "lines":
-    [
-        {
-            "name":"Cat",
-            "line":"My Name is Bastet."
-        },
-        {
-            "name":"Bastet",
-            "line":"Nice to meet you."
-        }
-    ]
+  "leftImage": "steve.png",
+  "rightImage": "catcat.png",
+  "lines": [
+    {
+      "name": "Cat",
+      "line": "My Name is Bastet."
+    },
+    {
+      "name": "Bastet",
+      "line": "Nice to meet you."
+    }
+  ]
 }
