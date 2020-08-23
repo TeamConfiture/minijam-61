@@ -127,6 +127,7 @@ public class CharacterController : MonoBehaviour
     void Death() {
         audioSource.Play();
         GameManager.Instance.blocPosition = false;
+        GameManager.Instance.TriggerPrefabsReset();
         Camera.main.transform.position = GameManager.Instance.respawnCamera.transform.position;
         transform.position = GameManager.Instance.respawnLocation.transform.position;
     }
