@@ -9,11 +9,12 @@ public class GameManager : MonoBehaviour
     [Header("Game Status")]
     public bool[] obtainedStatus = new bool[3] {false, false, false};
 
-
-
     public static GameManager Instance;
 
     public bool Interacting = false;
+
+    public GameObject respawnLocation;
+    public GameObject respawnCamera;
 
     // Start is called before the first frame update
     void Awake()
