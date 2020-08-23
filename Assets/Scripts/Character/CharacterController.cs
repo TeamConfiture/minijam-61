@@ -29,7 +29,7 @@ public class CharacterController : MonoBehaviour
     bool isPressedFire2 = false;
     Rigidbody2D rbFeet;
     bool onPlant;
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -126,6 +126,7 @@ public class CharacterController : MonoBehaviour
 
     void Death() {
         audioSource.Play();
+        GameManager.Instance.blocPosition = false;
         Camera.main.transform.position = GameManager.Instance.respawnCamera.transform.position;
         transform.position = GameManager.Instance.respawnLocation.transform.position;
     }
