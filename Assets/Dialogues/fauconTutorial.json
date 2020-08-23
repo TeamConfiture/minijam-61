@@ -1,0 +1,10 @@
+{
+  "leftImage": "steve.png",
+  "rightImage": "catcat.png",
+  "lines": [
+    {
+      "name": "Cat",
+      "line": "Let's push the buttons"
+    }
+  ]
+}
