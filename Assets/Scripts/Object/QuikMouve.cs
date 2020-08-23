@@ -38,8 +38,13 @@ public class QuikMouve : MonoBehaviour
 			collision.transform.position = destination.transform.position;
 			collision.attachedRigidbody.velocity = Vector2.zero;
 
-            if(nextCameraPosition != null)
+            if(nextCameraPosition != null) {
                 Camera.main.transform.position = nextCameraPosition.position;
+                // Debug.Log("===New position");
+                // Debug.Log(Camera.main.transform.position);
+                // Debug.Log(nextCameraPosition.position);
+                // Debug.Log("===");
+            }
         }
     }
 }
