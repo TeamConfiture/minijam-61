@@ -1,0 +1,242 @@
+fileFormatVersion: 2
+guid: e486f00f01ee8464f82fa333dcd0337d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4438743881136448780
+    second: eau_0
+  - first:
+      213: 6970536600435643119
+    second: eau_1
+  - first:
+      213: 5126826783323974352
+    second: eau_2
+  - first:
+      213: 114804892300413879
+    second: eau_3
+  - first:
+      213: -6896944204389705505
+    second: eau_4
+  - first:
+      213: -5689051993330057206
+    second: eau_5
+  - first:
+      213: 7428810020170525744
+    second: eau_6
+  - first:
+      213: -7433931730237541846
+    second: eau_7
+  - first:
+      213: -8675141394834216523
+    second: eau_8
+  - first:
+      213: -3756539069190595957
+    second: eau_9
+  - first:
+      213: -564735688686145864
+    second: eau_10
+  - first:
+      213: 7799102154148919868
+    second: eau_11
+  - first:
+      213: -4301510975671810762
+    second: eau_12
+  - first:
+      213: 8726510761306965149
+    second: eau_13
+  - first:
+      213: 7525191752914412938
+    second: eau_14
+  - first:
+      213: 6783593016295640921
+    second: eau_15
+  - first:
+      213: -2767640738430754058
+    second: eau_16
+  - first:
+      213: 7717717157504042260
+    second: eau_17
+  - first:
+      213: 3483460480412010278
+    second: eau_18
+  - first:
+      213: 1314154903072690636
+    second: eau_19
+  - first:
+      213: 5336537045952869232
+    second: eau_20
+  - first:
+      213: 660560158157216675
+    second: eau_21
+  - first:
+      213: 8280887628316874431
+    second: eau_22
+  - first:
+      213: 8279107048176766707
+    second: eau_23
+  - first:
+      213: 3178047728209184763
+    second: eau_24
+  - first:
+      213: -2529559360312671202
+    second: eau_25
+  - first:
+      213: 5184342749092295408
+    second: eau_26
+  - first:
+      213: 518478599648003273
+    second: eau_27
+  - first:
+      213: -145692388498556901
+    second: eau_28
+  - first:
+      213: -5007908457414970154
+    second: eau_29
+  - first:
+      213: -2306243841511391653
+    second: eau_30
+  - first:
+      213: 3165614276642119739
+    second: eau_31
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: eau_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 532
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fa5ce325f96662c0800000000000000
+      internalID: -4438743881136448780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eau_1
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 0
+        width: 532
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe253da4b125cb060800000000000000
+      internalID: 6970536600435643119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
