@@ -860,7 +860,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2118142761}
-  m_RootOrder: 5
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &222479365 stripped
 Transform:
@@ -7479,11 +7479,11 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1654277618}
+  - {fileID: 217884285}
   - {fileID: 1411158760}
   - {fileID: 483341493}
   - {fileID: 350984613}
   - {fileID: 636611461}
-  - {fileID: 217884285}
   - {fileID: 173938039}
   - {fileID: 488763245}
   - {fileID: 1228066980}
@@ -7504,6 +7504,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 345783898}
     m_Modifications:
+    - target: {fileID: 8334275089460444036, guid: 524082c4bae43a54eafe8181ecc2761d,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: -3.3748074
+      objectReference: {fileID: 0}
+    - target: {fileID: 8334275089460444036, guid: 524082c4bae43a54eafe8181ecc2761d,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 13.275776
+      objectReference: {fileID: 0}
     - target: {fileID: 8334275089460444038, guid: 524082c4bae43a54eafe8181ecc2761d,
         type: 3}
       propertyPath: m_LocalPosition.x
