@@ -35,4 +35,8 @@ public class TorchScript : MonoBehaviour
             // Debug.Log("State changed !");
         }
     }
+
+    public void SwitchState() {
+        this.SwitchState(!isActive);
+    }
 }
