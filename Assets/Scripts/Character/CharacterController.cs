@@ -22,11 +22,13 @@ public class CharacterController : MonoBehaviour
     int jumpNb;
 
     float endOfCooldownTime = 0.0f;
+    LeverScript leverToInteract = null;
 
     GameManager meneger = null;
 
     bool isPressedFire2 = false;
     Rigidbody2D rbFeet;
+
 
     // Start is called before the first frame update
     void Start()
@@ -76,6 +78,15 @@ public class CharacterController : MonoBehaviour
                 // Debug.Log("End");
             }
         }
+        if (endOfCooldownTime < Time.time) {
+            if (leverToInteract != null) {
+                if (Input.GetButton("Fire1")){
+                    Debug.Log("Hep !");
+                    endOfCooldownTime = Time.time + 0.5f;
+                    // leverToInteract.Interact();
+                }
+            }
+        }
         // Debug.Log(rb.velocity);
     }
 
@@ -114,8 +125,14 @@ public class CharacterController : MonoBehaviour
     {
 		if (collision.tag == "Spike") {
 			this.Death();
-		}
+		} else if (collision.tag == "Lever") {
+            leverToInteract = collision.gameObject.GetComponent<LeverScript>();
+        }
 
+    }
+
+    private void OnTriggerExit2D(Collider2D collision) {
+        leverToInteract = null;
     }
 
     public void FeetCollision()
@@ -123,16 +140,16 @@ public class CharacterController : MonoBehaviour
         jumpNb = 0;
     }
 
-    private void OnTriggerStay2D(Collider2D other){
-        if (endOfCooldownTime < Time.time) {
-            if (other.tag == "Lever") {
-                if (Input.GetButton("Fire3") || Input.GetButton("Fire2") || Input.GetButton("Fire1")){
-                    Debug.Log("Hep !");
-                    endOfCooldownTime = Time.time + 1;
-                    // LeverScript machin = other.gameObject.GetComponent<LeverScript>();
-                    // machin.Interact();
-                }
-            }
-        }
-    }
+    // private void OnTriggerStay2D(Collider2D other){
+    //     if (endOfCooldownTime < Time.time) {
+    //         if (other.tag == "Lever") {
+    //             if (Input.GetButton("Fire3") || Input.GetButton("Fire2") || Input.GetButton("Fire1")){
+    //                 Debug.Log("Hep !");
+    //                 endOfCooldownTime = Time.time + 1;
+    //                 // LeverScript machin = other.gameObject.GetComponent<LeverScript>();
+    //                 // machin.Interact();
+    //             }
+    //         }
+    //     }
+    // }
 }
