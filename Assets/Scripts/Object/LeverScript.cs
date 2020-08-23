@@ -6,12 +6,12 @@ using TMPro;
 public class LeverScript : Interactable
 {
     [Header("Attributes")]
-    public bool isActive = true;
+    public bool isActive;
 
     [Header("Related Content")]
     public TorchScript[] myGameObjects;
 
-    private bool prevState = false;
+    private bool prevState;
 
     private SpriteRenderer sRenderer;
 
@@ -27,6 +27,7 @@ public class LeverScript : Interactable
         }
 
         MakeInteractable(false);
+        prevState = isActive;
     }
 
     // Update is called once per frame
@@ -35,7 +36,7 @@ public class LeverScript : Interactable
         if (prevState != isActive) {
             prevState = isActive;
             sRenderer.flipX = isActive;
-            Debug.Log("State switched !");
+            // Debug.Log("State switched !");
             //theAnim.SetBool("active", isActive); // This means for each primitve data type there's a setter.
             this.ChangeStateObjects();
         }
@@ -48,7 +49,7 @@ public class LeverScript : Interactable
     }
 
     public override void Interact() {
-        Debug.Log("Hep !");
+        // Debug.Log("Hep !");
         isActive = !isActive;
     }
 

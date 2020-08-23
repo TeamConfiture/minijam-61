@@ -5,9 +5,9 @@ using UnityEngine;
 public class TorchScript : MonoBehaviour
 {
     [Header("Attributes")]
-    public bool isActive = true;
+    public bool isActive;
 
-    private bool prevState = false;
+    private bool prevState;
 
     private Animator theAnim;
 
@@ -16,6 +16,7 @@ public class TorchScript : MonoBehaviour
     {
         theAnim = GetComponent<Animator>();
         theAnim.SetBool("active", isActive); // This means for each primitve data type there's a setter.
+        prevState = isActive;
     }
 
     // Update is called once per frame

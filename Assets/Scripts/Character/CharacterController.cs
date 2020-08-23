@@ -81,9 +81,9 @@ public class CharacterController : MonoBehaviour
         if (endOfCooldownTime < Time.time) {
             if (leverToInteract != null) {
                 if (Input.GetButton("Fire1")){
-                    Debug.Log("Hep !");
+                    // Debug.Log("Hep !");
                     endOfCooldownTime = Time.time + 0.5f;
-                    // leverToInteract.Interact();
+                    leverToInteract.Interact();
                 }
             }
         }

@@ -3267,7 +3267,7 @@ PrefabInstance:
     - target: {fileID: -5644245089658537583, guid: f00147f53787cd2fb8625fb813454044,
         type: 3}
       propertyPath: InteractionCommand
-      value: Jump
+      value: Fire1
       objectReference: {fileID: 0}
     - target: {fileID: 5349039823223427394, guid: f00147f53787cd2fb8625fb813454044,
         type: 3}
