@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class CharacterController : MonoBehaviour
@@ -127,7 +128,9 @@ public class CharacterController : MonoBehaviour
     void Death() {
         audioSource.Play();
         GameManager.Instance.blocPosition = false;
-        GameManager.Instance.TriggerPrefabsReset();
+        try {
+            GameManager.Instance.TriggerPrefabsReset();
+        } catch (NullReferenceException) {}
         Camera.main.transform.position = GameManager.Instance.respawnCamera.transform.position;
         transform.position = GameManager.Instance.respawnLocation.transform.position;
     }
