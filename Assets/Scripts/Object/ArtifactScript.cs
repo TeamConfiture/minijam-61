@@ -39,9 +39,9 @@ public class ArtifactScript : MonoBehaviour
         meneger.GetArtifact(artifactId);
         if (fond != null) {
             fond.SetActive(true);
-        }
 
-        yield return new WaitForSeconds(4);
+            yield return new WaitForSeconds(4);
+        }
         UnityEngine.SceneManagement.SceneManager.LoadScene(scene);
         if (fond != null) {
             fond.SetActive(false);

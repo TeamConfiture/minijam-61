@@ -13,5 +13,6 @@ public class ChangeAudio : MonoBehaviour
         AudioSource source = GameManager.Instance.GetComponent<AudioSource>();
         source.clip = music;
         source.volume = volume;
+        source.Play();
     }
 }
