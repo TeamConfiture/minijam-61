@@ -36,4 +36,10 @@ public class GameManager : MonoBehaviour
             obtainedStatus[artifactId-1] = true;
         }
     }
+
+    public bool GetArtifactValue(int artifactId) {
+        if (artifactId < 1 || artifactId > 3)
+            return false;
+        return obtainedStatus[artifactId-1];
+    }
 }
