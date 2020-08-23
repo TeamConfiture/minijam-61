@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Spike
+  - Lever
+  - Rain
+  - Plant
+  - WaterWithLog
   layers:
   - Default
   - TransparentFX

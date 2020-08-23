@@ -21,10 +21,14 @@ public class CharacterController : MonoBehaviour
     bool jumpRequest;
     int jumpNb;
 
+    float endOfCooldownTime = 0.0f;
+    LeverScript leverToInteract = null;
+
     GameManager meneger = null;
 
     bool isPressedFire2 = false;
     Rigidbody2D rbFeet;
+    bool onPlant;
 
     // Start is called before the first frame update
     void Start()
@@ -39,6 +43,7 @@ public class CharacterController : MonoBehaviour
         rbFeet = transform.GetChild(0).GetComponent<Rigidbody2D>();
 
         meneger = GameManager.Instance;
+        onPlant = false;
     }
 
     private void Update() {
@@ -74,6 +79,15 @@ public class CharacterController : MonoBehaviour
                 // Debug.Log("End");
             }
         }
+        if (endOfCooldownTime < Time.time) {
+            if (leverToInteract != null) {
+                if (Input.GetButton("Fire1")){
+                    // Debug.Log("Hep !");
+                    endOfCooldownTime = Time.time + 0.5f;
+                    leverToInteract.Interact();
+                }
+            }
+        }
         // Debug.Log(rb.velocity);
     }
 
@@ -85,17 +99,26 @@ public class CharacterController : MonoBehaviour
             rb.AddForce(Vector2.up * jumpVelocity * (rb.velocity.y < 0 ? 2 : 1), ForceMode2D.Impulse);
             jumpRequest = false;
         }
-        if (rb.velocity.y < 0) // Falling down
+        if (!onPlant)
         {
-            rb.gravityScale = fallMultiplier;
-        } else if (rb.velocity.y > 0 && !Input.GetButtonDown("Jump")) // Jump gradient
-        {
-            rb.gravityScale = lowJumpMultiplier;
-        } else // Reset gravity
-        {
-            rb.gravityScale = 1f;
+            if (rb.velocity.y < 0) // Falling down
+            {
+                rb.gravityScale = fallMultiplier;
+            }
+            else if (rb.velocity.y > 0 && !Input.GetButtonDown("Jump")) // Jump gradient
+            {
+                rb.gravityScale = lowJumpMultiplier;
+            }
+            else // Reset gravity
+            {
+                rb.gravityScale = 1f;
+            }
         }
-        Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), 0f, 0f);
+        else
+        {
+            rb.gravityScale = 0f;
+        }
+        Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), onPlant ? Input.GetAxis("Vertical") : 0f, 0f);
         transform.position += movement * Time.deltaTime * moveMultiplier;
         //float tileNumber = Mathf.FloorToInt(transform.position.x);
         //Debug.Log(tileNumber);
@@ -103,6 +126,7 @@ public class CharacterController : MonoBehaviour
 
     void Death() {
         audioSource.Play();
+        GameManager.Instance.blocPosition = false;
         Camera.main.transform.position = GameManager.Instance.respawnCamera.transform.position;
         transform.position = GameManager.Instance.respawnLocation.transform.position;
     }
@@ -112,12 +136,37 @@ public class CharacterController : MonoBehaviour
     {
 		if (collision.tag == "Spike") {
 			this.Death();
-		}
+		} else if (collision.tag == "Lever") {
+            leverToInteract = collision.gameObject.GetComponent<LeverScript>();
+        } else if (collision.tag == "Plant") {
+            onPlant = true;
+        }
+    }
 
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.tag == "Plant")
+        {
+            onPlant = false;
+        }
+        leverToInteract = null;
     }
 
     public void FeetCollision()
     {
         jumpNb = 0;
     }
+
+    // private void OnTriggerStay2D(Collider2D other){
+    //     if (endOfCooldownTime < Time.time) {
+    //         if (other.tag == "Lever") {
+    //             if (Input.GetButton("Fire3") || Input.GetButton("Fire2") || Input.GetButton("Fire1")){
+    //                 Debug.Log("Hep !");
+    //                 endOfCooldownTime = Time.time + 1;
+    //                 // LeverScript machin = other.gameObject.GetComponent<LeverScript>();
+    //                 // machin.Interact();
+    //             }
+    //         }
+    //     }
+    // }
 }
