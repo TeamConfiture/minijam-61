@@ -13,6 +13,7 @@ public class CharacterController : MonoBehaviour
     public float lowJumpMultiplier = 2f;
 
     [Header("Attributes")]
+    public int maxJumpNumber = 1;
     public bool isAlive = true;
 
 	AudioSource audioSource;
@@ -56,7 +57,7 @@ public class CharacterController : MonoBehaviour
             animator.SetFloat("SpeedX", -1.0f);
         }
 
-        if (Input.GetButtonDown ("Jump") && jumpNb < 2)
+        if (Input.GetButtonDown ("Jump") && jumpNb < maxJumpNumber)
         {
             jumpRequest = true;
             jumpNb++;

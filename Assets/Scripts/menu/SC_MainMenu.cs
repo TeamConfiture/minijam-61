@@ -13,8 +13,8 @@ public class SC_MainMenu : MonoBehaviour
         MainMenuButton();
     }
 
-    public void PlayNowButton() {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("testSpikes");
+    public void PlayNowButton(string scene) {
+        UnityEngine.SceneManagement.SceneManager.LoadScene(scene);
     }
     public void CreditsButton() {
         MainMenu.SetActive(false);
