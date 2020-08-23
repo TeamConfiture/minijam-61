@@ -1,13 +1,66 @@
 {
-    "lines":
-    [
-        {
-            "name":"Cat",
-            "line":"My Name is Bastet."
-        },
-        {
-            "name":"Bastet",
-            "line":"Nice to meet you."
-        }
-    ]
+  "leftImage": "steve.png",
+  "rightImage": "catcat.png",
+  "lines": [
+    {
+      "name": "Cat",
+      "line": "Meowww (like it's explain something)"
+    },
+    {
+      "name": "Cat",
+      "line": "Meowww? (like it's surprised)"
+    },
+    {
+      "name": "Cat",
+      "line": "Ron ron (purr)"
+    },
+    {
+      "name": "Cat",
+      "line": "As I tried to explain, it is forbidden and dangerous to enter this pyramid. And, Congratulations! You annoyed Anubis, what a mess!"
+    },
+    {
+      "name": "Cat",
+      "line": "..."
+    },
+    {
+      "name": "Cat",
+      "line": "Alright, I will help you more."
+    },
+    {
+      "name": "Cat",
+      "line": "First of all, you have not been teleported to another place, just to another time."
+    },
+    {
+      "name": "Cat",
+      "line": "You are in the same pyramid you so much wanted to visit and plunder, relax."
+    },
+    {
+      "name": "Cat",
+      "line": "Now you can see how it was at the beginning. When it was just finished."
+    },
+    {
+      "name": "Cat",
+      "line": "I know it is beeeaaauuuuuutiful!"
+    },
+    {
+      "name": "Cat",
+      "line": "Oh! But maybe you just want to go to your time, and as I am the kindest goddess here (yes I am aware I am the only one) I will help you."
+    },
+    {
+      "name": "Cat",
+      "line": "Returning to your time is not an easy task, I do not have the power to make you return to the 21st century."
+    },
+    {
+      "name": "Cat",
+      "line": "And even if I was able to, I do not want to. You came here to explore, you will explore, be happy!"
+    },
+    {
+      "name": "Cat",
+      "line": "You need 3 artefacts to go home : mine, Sobek's and Ra's."
+    },
+    {
+      "name": "Cat",
+      "line": "Oh, by the way, I am Bastet. Sometimes I forget that some new humans do not know my name."
+    }
+  ]
 }

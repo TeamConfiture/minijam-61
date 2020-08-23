@@ -34,12 +34,17 @@ public class QuikMouve : MonoBehaviour
         if(collision.tag == "Player")
         {
 			audioSource.Play();
-            Debug.Log(destination.transform.position);
+            // Debug.Log(destination.transform.position);
 			collision.transform.position = destination.transform.position;
 			collision.attachedRigidbody.velocity = Vector2.zero;
 
-            if(nextCameraPosition != null)
+            if(nextCameraPosition != null) {
                 Camera.main.transform.position = nextCameraPosition.position;
+                // Debug.Log("===New position");
+                // Debug.Log(Camera.main.transform.position);
+                // Debug.Log(nextCameraPosition.position);
+                // Debug.Log("===");
+            }
         }
     }
 }
