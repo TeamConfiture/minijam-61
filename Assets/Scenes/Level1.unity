@@ -1716,7 +1716,7 @@ RectTransform:
   m_Children:
   - {fileID: 848720805}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3813,6 +3813,7 @@ GameObject:
   - component: {fileID: 713690205}
   - component: {fileID: 713690204}
   - component: {fileID: 713690207}
+  - component: {fileID: 713690208}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -3899,6 +3900,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   respawnLocation: {fileID: 1909881102}
   respawnCamera: {fileID: 1683096792}
+--- !u!114 &713690208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 713690203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8964af85b209144593e2459393ea70e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  music: {fileID: 8300000, guid: 962608a20bf57d54d880f8cc636dc728, type: 3}
+  volume: 1
 --- !u!4 &716179501 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4698638918449514844, guid: c27c6311554233b94948fea0ea6ceb6c,
@@ -6995,7 +7010,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1290742755 stripped
 Transform:
@@ -10519,7 +10534,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1929424267
 GameObject:
