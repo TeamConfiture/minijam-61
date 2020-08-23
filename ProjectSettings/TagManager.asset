@@ -8,6 +8,7 @@ TagManager:
   - Lever
   - Rain
   - Plant
+  - WaterWithLog
   layers:
   - Default
   - TransparentFX
