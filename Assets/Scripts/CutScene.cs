@@ -14,8 +14,14 @@ public class CutScene : MonoBehaviour
         vp.loopPointReached += EndReached;
     }
 
+    private void Start()
+    {
+        GameManager.Instance.GetComponent<AudioSource>().mute = true;
+    }
+
     void EndReached(VideoPlayer vp)
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene(NextScene);
+        GameManager.Instance.GetComponent<AudioSource>().mute = false;
     }
 }
