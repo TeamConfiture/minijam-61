@@ -19,6 +19,12 @@ public class CutScene : MonoBehaviour
         GameManager.Instance.GetComponent<AudioSource>().mute = true;
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+            EndReached(null);
+    }
+
     void EndReached(VideoPlayer vp)
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene(NextScene);
