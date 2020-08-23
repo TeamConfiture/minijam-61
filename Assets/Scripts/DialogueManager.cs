@@ -37,13 +37,15 @@ public class DialogueManager : MonoBehaviour
             Sprite sprite = AssetDatabase.LoadAssetAtPath<Sprite>(basePath + Dial.leftImage);
             leftImage.sprite = sprite;
             leftImage.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, Screen.width / 5);
+            leftImage.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, Screen.width * sprite.rect.height / sprite.rect.width / 5);
             leftImage.preserveAspect = true;
         }
         if (Dial.rightImage != null)
         {
             Sprite sprite = AssetDatabase.LoadAssetAtPath<Sprite>(basePath + Dial.rightImage);
             rightImage.sprite = sprite;
-            rightImage.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, Screen.width / 5); 
+            rightImage.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, Screen.width);
+            rightImage.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, Screen.width * sprite.rect.height / sprite.rect.width / 5);
             rightImage.preserveAspect = true;
         }
 
@@ -58,7 +60,7 @@ public class DialogueManager : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetButtonDown("Jump"))
+        if(Input.GetButtonDown("Fire1"))
         {
             NextLine();
         }
