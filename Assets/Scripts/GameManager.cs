@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour
         if (artifactId < 1 || artifactId > 3) {
             Debug.Log("Wrong ID !!!");
         } else {
-            obtainedStatus[artifactId] = true;
+            obtainedStatus[artifactId-1] = true;
         }
     }
 }
