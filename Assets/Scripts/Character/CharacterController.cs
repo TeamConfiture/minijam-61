@@ -140,6 +140,7 @@ public class CharacterController : MonoBehaviour
             leverToInteract = collision.gameObject.GetComponent<LeverScript>();
         } else if (collision.tag == "Plant") {
             onPlant = true;
+            rb.velocity = new Vector2(rb.velocity.x, 0f);
         }
     }
 
