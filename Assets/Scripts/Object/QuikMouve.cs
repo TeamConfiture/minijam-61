@@ -34,7 +34,7 @@ public class QuikMouve : MonoBehaviour
         if(collision.tag == "Player")
         {
 			audioSource.Play();
-            Debug.Log(destination.transform.position);
+            // Debug.Log(destination.transform.position);
 			collision.transform.position = destination.transform.position;
 			collision.attachedRigidbody.velocity = Vector2.zero;
 
