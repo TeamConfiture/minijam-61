@@ -8431,7 +8431,7 @@ PrefabInstance:
     - target: {fileID: 3923503662666626213, guid: 666c2b0d5d2e6ed8fad2e476edac7fe4,
         type: 3}
       propertyPath: scene
-      value: Level2
+      value: Hub
       objectReference: {fileID: 0}
     - target: {fileID: 4669793292101222559, guid: 666c2b0d5d2e6ed8fad2e476edac7fe4,
         type: 3}

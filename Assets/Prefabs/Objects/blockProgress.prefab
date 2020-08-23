@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3165027150316160457}
   - component: {fileID: 3810563855256377643}
   - component: {fileID: 4746568289590233725}
+  - component: {fileID: 1965692471766640091}
   m_Layer: 0
   m_Name: blockProgress
   m_TagString: Untagged
@@ -98,6 +99,32 @@ MonoBehaviour:
   mustBeActive: 0
   artifactId: 0
   otherBox: {fileID: 7290442820665721612}
+--- !u!61 &1965692471766640091
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2028868634787563580}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: c7b1e58fe9012ae4d9ee969823f22442, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.45, y: 2.43}
+    newSize: {x: 2.45, y: 2.43}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.45, y: 2.43}
+  m_EdgeRadius: 0
 --- !u!1 &7290442820665721612
 GameObject:
   m_ObjectHideFlags: 0
