@@ -1583,7 +1583,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Emotionnal support & test: Scipi0, Tyney, Trino'
+  m_Text: 'Emotionnal support & test: Scipi0, Tyney, Trino, Jeanne'
 --- !u!222 &1683137224
 CanvasRenderer:
   m_ObjectHideFlags: 0
