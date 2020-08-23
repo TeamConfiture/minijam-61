@@ -243,7 +243,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59cfde14fa71035439132e21aeba7738, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InteractionCommand: Jump
+  InteractionCommand: Fire1
   InteractionText: '{0} to talk'
   InteractionPopup: {fileID: 1585673080}
   Interacting: 0
