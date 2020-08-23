@@ -37,7 +37,7 @@ public class QuikMouve : MonoBehaviour
             // Debug.Log(destination.transform.position);
 			collision.transform.position = destination.transform.position;
 			collision.attachedRigidbody.velocity = Vector2.zero;
-
+            Input.ResetInputAxes();
             if(nextCameraPosition != null) {
                 Camera.main.transform.position = nextCameraPosition.position;
                 // Debug.Log("===New position");
