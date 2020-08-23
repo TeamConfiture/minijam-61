@@ -61,6 +61,34 @@
     {
       "name": "Cat",
       "line": "Oh, by the way, I am Bastet. Sometimes I forget that some new humans do not know my name."
-    }
+    },
+    {
+      "name": "Cat",
+      "line": "If you want my artefact, you will have to complete this trial."
+    },
+    {
+      "name": "Cat",
+      "line": "But I'm sure it would be impossible for such a bald adventurer."
+    },
+    {
+      "name": "Steve",
+      "line": "Oh come on, I'm not just a regular human, I am the all mighty Stev..."
+    },
+    {
+      "name": "Cat",
+      "line": "Enough !"
+    },
+    {
+      "name": "Cat",
+      "line": "If you really want to go back to your era, I will give you a little help."
+    },
+    {
+      "name": "Cat",
+      "line": "Thanks to my divine greatness, you are now able to move those lovely blocks."
+    },
+    {
+      "name": "Cat",
+      "line": "Use this power wisely and you will be able to complete in your quest."
+    },
   ]
 }

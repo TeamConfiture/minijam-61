@@ -3,8 +3,56 @@
   "rightImage": "catcat.png",
   "lines": [
     {
-      "name": "Cat",
-      "line": "Let's push the buttons"
+      "name": "Eagle",
+      "line": "Caw caw caw..."
+    },
+    {
+      "name": "Crow?",
+      "line": "(I am not even a crow, I should not cry like that)"
+    },
+    {
+      "name": "Eagle",
+      "line": "*Screams*"
+    },
+    {
+      "name": "Eagle",
+      "line": "(Much better)"
+    },
+    {
+      "name": "Eagle",
+      "line": "Oh you are already there. I was expecting you. How, you ask?"
+    },
+    {
+      "name": "Eagle",
+      "line": "It was very easy actually, even within this pyramid my sight is beyond your human reason."
+    },
+    {
+      "name": "Eagle",
+      "line": "Of course, I am Ra! God among gods, creator of the universe and most beautiful bird in this pyramid."
+    },
+    {
+      "name": "Steve",
+      "line": "And the only one for sure!"
+    },
+    {
+      "name": "Ra",
+      "line": "Are you trying to make a fool out of me, deity of the sun? Do not try your luck or you will be consumed by my infinite power!"
+    },
+    {
+      "name": "Steve",
+      "line": "Or I could make a delightful meal out of your bird flesh..."
+    },
+    {
+      "name": "Ra",
+      "line": "That is too much for me to handle. I will take you to a place where no one ever escaped from."
+    },
+    {
+      "name": "Ra",
+      "line": "I will make you suffer. You will die here you filthy human."
+    },
+    {
+      "name": "Ra",
+      "line": "You will never solve these puzzles! This tomb will be your tomb!"
     }
   ]
 }
