@@ -25,7 +25,7 @@ public class CharacterController : MonoBehaviour
 
     bool isPressedFire2 = false;
     Rigidbody2D rbFeet;
-	
+
     // Start is called before the first frame update
     void Start()
     {
@@ -63,13 +63,13 @@ public class CharacterController : MonoBehaviour
             jumpNb++;
         }
         if (!isPressedFire2) {
-            if (Input.GetButton("Fire1") || Input.GetButton("Fire2") || Input.GetButton("Fire3")) {
+            if (Input.GetButton("Fire2")) {
                 isPressedFire2 = true;
                 meneger.blocPosition = !meneger.blocPosition;
                 // Debug.Log("Fire !");
             }
         } else {
-            if (!(Input.GetButton("Fire1") || Input.GetButton("Fire2") || Input.GetButton("Fire3"))) {
+            if (!Input.GetButton("Fire2")) {
                 isPressedFire2 = false;
                 // Debug.Log("End");
             }
@@ -100,13 +100,11 @@ public class CharacterController : MonoBehaviour
         //float tileNumber = Mathf.FloorToInt(transform.position.x);
         //Debug.Log(tileNumber);
     }
-	
+
     void Death() {
-        if (isAlive) {
-            isAlive = false;
-            Debug.Log("Dead !");
-			audioSource.Play();
-        }
+        audioSource.Play();
+        Camera.main.transform.position = GameManager.Instance.respawnCamera.transform.position;
+        transform.position = GameManager.Instance.respawnLocation.transform.position;
     }
 
     // Manages whether the character is on the groud or not
@@ -115,7 +113,7 @@ public class CharacterController : MonoBehaviour
 		if (collision.tag == "Spike") {
 			this.Death();
 		}
-        
+
     }
 
     public void FeetCollision()
