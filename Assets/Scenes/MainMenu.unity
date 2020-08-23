@@ -1058,7 +1058,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Art: Catnip, Kimi, strapontin
+  m_Text: 'Art: Catnip, Kimi, Strapontin
 
 
 '
@@ -1661,7 +1661,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Voice acting:  germophobe'
+  m_Text: 'Voice acting:  Germophobe'
 --- !u!222 &1719573841
 CanvasRenderer:
   m_ObjectHideFlags: 0
