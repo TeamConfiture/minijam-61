@@ -1642,7 +1642,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &312448317
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8428,6 +8428,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1495384695}
     m_Modifications:
+    - target: {fileID: 3923503662666626213, guid: 666c2b0d5d2e6ed8fad2e476edac7fe4,
+        type: 3}
+      propertyPath: scene
+      value: Level2
+      objectReference: {fileID: 0}
     - target: {fileID: 4669793292101222559, guid: 666c2b0d5d2e6ed8fad2e476edac7fe4,
         type: 3}
       propertyPath: m_LocalPosition.x

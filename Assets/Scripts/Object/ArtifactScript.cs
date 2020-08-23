@@ -6,7 +6,7 @@ public class ArtifactScript : MonoBehaviour
 {
     [Header("Attributes")]
     public int artifactId;
-
+    public string scene;
     GameManager meneger = null;
 
     // Start is called before the first frame update
@@ -26,9 +26,14 @@ public class ArtifactScript : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision) {
         if (collision.tag == "Player") {
             meneger.GetArtifact(artifactId);
+            LoadNextScene(scene);
+    }
         }/* else {
             Debug.Log("Colliding");
             Debug.Log(collision.tag);
         }*/
-    }
+
+     public void LoadNextScene(string scene) {
+        UnityEngine.SceneManagement.SceneManager.LoadScene(scene);
+     }
 }
