@@ -39,6 +39,28 @@ public class PlantScript : MonoBehaviour
         }
     }
 
+    private void Reset()
+    {
+        currentGrowState.SetActive(false);
+        nextGrowState.SetActive(false);
+        growState = 0;
+        currentGrowState = transform.GetChild(growState).gameObject;
+        nextGrowState = transform.GetChild(growState + 1).gameObject;
+        currentGrowState.SetActive(true);
+        nextGrowState.SetActive(false);
+        canGrow = true;
+    }
+
+    private void OnEnable()
+    {
+        GameManager.ResetPrefabs += Reset;
+    }
+
+    private void OnDisable()
+    {
+        GameManager.ResetPrefabs += Reset;
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Rain")
