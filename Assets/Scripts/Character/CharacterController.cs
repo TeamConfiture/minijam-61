@@ -148,9 +148,6 @@ public class CharacterController : MonoBehaviour
         {
             onPlant = false;
         }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision) {
         leverToInteract = null;
     }
 
