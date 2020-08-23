@@ -25,6 +25,7 @@ public class CharacterController : MonoBehaviour
 
     bool isPressedFire2 = false;
     Rigidbody2D rbFeet;
+    bool onPlant;
 	
     // Start is called before the first frame update
     void Start()
@@ -39,6 +40,7 @@ public class CharacterController : MonoBehaviour
         rbFeet = transform.GetChild(0).GetComponent<Rigidbody2D>();
 
         meneger = GameManager.Instance;
+        onPlant = false;
     }
 
     private void Update() {
@@ -74,7 +76,6 @@ public class CharacterController : MonoBehaviour
                 // Debug.Log("End");
             }
         }
-        // Debug.Log(rb.velocity);
     }
 
     // Called every physics frame
@@ -85,17 +86,26 @@ public class CharacterController : MonoBehaviour
             rb.AddForce(Vector2.up * jumpVelocity * (rb.velocity.y < 0 ? 2 : 1), ForceMode2D.Impulse);
             jumpRequest = false;
         }
-        if (rb.velocity.y < 0) // Falling down
+        if (!onPlant)
         {
-            rb.gravityScale = fallMultiplier;
-        } else if (rb.velocity.y > 0 && !Input.GetButtonDown("Jump")) // Jump gradient
-        {
-            rb.gravityScale = lowJumpMultiplier;
-        } else // Reset gravity
-        {
-            rb.gravityScale = 1f;
+            if (rb.velocity.y < 0) // Falling down
+            {
+                rb.gravityScale = fallMultiplier;
+            }
+            else if (rb.velocity.y > 0 && !Input.GetButtonDown("Jump")) // Jump gradient
+            {
+                rb.gravityScale = lowJumpMultiplier;
+            }
+            else // Reset gravity
+            {
+                rb.gravityScale = 1f;
+            }
         }
-        Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), 0f, 0f);
+        else
+        {
+            rb.gravityScale = 0f;
+        }
+        Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), onPlant ? Input.GetAxis("Vertical") : 0f, 0f);
         transform.position += movement * Time.deltaTime * moveMultiplier;
         //float tileNumber = Mathf.FloorToInt(transform.position.x);
         //Debug.Log(tileNumber);
@@ -115,7 +125,18 @@ public class CharacterController : MonoBehaviour
 		if (collision.tag == "Spike") {
 			this.Death();
 		}
-        
+        if (collision.tag == "Plant")
+        {
+            onPlant = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.tag == "Plant")
+        {
+            onPlant = false;
+        }
     }
 
     public void FeetCollision()
