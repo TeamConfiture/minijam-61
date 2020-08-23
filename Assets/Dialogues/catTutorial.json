@@ -1,6 +1,6 @@
 {
-  "leftImage": "steve.png",
-  "rightImage": "catcat.png",
+  "leftImage": "steve",
+  "rightImage": "catcat",
   "lines": [
     {
       "name": "Cat",

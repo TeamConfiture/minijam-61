@@ -34,7 +34,8 @@ public class DialogueManager : MonoBehaviour
 
         if (Dial.leftImage != null)
         {
-            Sprite sprite = AssetDatabase.LoadAssetAtPath<Sprite>(basePath + Dial.leftImage);
+            Debug.Log(Dial.leftImage);
+            Sprite sprite = Resources.Load<Sprite>(Dial.leftImage);
             leftImage.sprite = sprite;
             leftImage.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, Screen.width / 5);
             leftImage.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, Screen.width * sprite.rect.height / sprite.rect.width / 5);
@@ -42,7 +43,7 @@ public class DialogueManager : MonoBehaviour
         }
         if (Dial.rightImage != null)
         {
-            Sprite sprite = AssetDatabase.LoadAssetAtPath<Sprite>(basePath + Dial.rightImage);
+            Sprite sprite = Resources.Load<Sprite>(Dial.rightImage);
             rightImage.sprite = sprite;
             rightImage.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, Screen.width);
             rightImage.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, Screen.width * sprite.rect.height / sprite.rect.width / 5);
