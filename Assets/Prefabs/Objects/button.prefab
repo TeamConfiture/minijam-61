@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5349039823223427394}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.576622, y: -6.392451, z: 0}
+  m_LocalPosition: {x: -5.576622, y: -6.051, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3220580510296036063}
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e40082d8fc11908ad8208372f9d2b3c3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d449ec7471b8bd99db76f8ca85f3260c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InteractionCommand: Fire1
-  InteractionText: '{0} to talk'
+  InteractionText: '{0} to switch'
   InteractionPopup: {fileID: 7159483566434957365}
   Interacting: 0
   isActive: 1
@@ -118,8 +118,8 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.47, y: 0.89}
+    pivot: {x: 0.4972767, y: 0.24909937}
+    oldSize: {x: 0.686, y: 1.102}
     newSize: {x: 1.47, y: 0.89}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
