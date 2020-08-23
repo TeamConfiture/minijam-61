@@ -63,13 +63,13 @@ public class CharacterController : MonoBehaviour
             jumpNb++;
         }
         if (!isPressedFire2) {
-            if (Input.GetButton("Fire1") || Input.GetButton("Fire2") || Input.GetButton("Fire3")) {
+            if (Input.GetButton("Fire2")) {
                 isPressedFire2 = true;
                 meneger.blocPosition = !meneger.blocPosition;
                 // Debug.Log("Fire !");
             }
         } else {
-            if (!(Input.GetButton("Fire1") || Input.GetButton("Fire2") || Input.GetButton("Fire3"))) {
+            if (!Input.GetButton("Fire2")) {
                 isPressedFire2 = false;
                 // Debug.Log("End");
             }
