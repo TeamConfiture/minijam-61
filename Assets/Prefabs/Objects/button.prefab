@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 730484156820743889}
   m_Layer: 0
   m_Name: button
-  m_TagString: Untagged
+  m_TagString: Lever
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -101,6 +101,7 @@ MonoBehaviour:
   InteractionPopup: {fileID: 7159483566434957365}
   Interacting: 0
   isActive: 1
+  myGameObjects: []
 --- !u!61 &730484156820743889
 BoxCollider2D:
   m_ObjectHideFlags: 0

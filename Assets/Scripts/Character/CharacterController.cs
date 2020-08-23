@@ -21,6 +21,8 @@ public class CharacterController : MonoBehaviour
     bool jumpRequest;
     int jumpNb;
 
+    float endOfCooldownTime = 0.0f;
+
     GameManager meneger = null;
 
     bool isPressedFire2 = false;
@@ -119,5 +121,18 @@ public class CharacterController : MonoBehaviour
     public void FeetCollision()
     {
         jumpNb = 0;
+    }
+
+    private void OnTriggerStay2D(Collider2D other){
+        if (endOfCooldownTime < Time.time) {
+            if (other.tag == "Lever") {
+                if (Input.GetButton("Fire3") || Input.GetButton("Fire2") || Input.GetButton("Fire1")){
+                    Debug.Log("Hep !");
+                    endOfCooldownTime = Time.time + 1;
+                    // LeverScript machin = other.gameObject.GetComponent<LeverScript>();
+                    // machin.Interact();
+                }
+            }
+        }
     }
 }
