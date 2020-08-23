@@ -16,6 +16,9 @@ public class GameManager : MonoBehaviour
     public GameObject respawnLocation;
     public GameObject respawnCamera;
 
+    public delegate void ResetAction();
+    public static event ResetAction ResetPrefabs;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -41,5 +44,10 @@ public class GameManager : MonoBehaviour
         if (artifactId < 1 || artifactId > 3)
             return false;
         return obtainedStatus[artifactId-1];
+    }
+
+    public void TriggerPrefabsReset()
+    {
+        ResetPrefabs();
     }
 }
