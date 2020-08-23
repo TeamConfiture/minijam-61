@@ -6,7 +6,8 @@ public class SC_MainMenu : MonoBehaviour
 {
     public GameObject MainMenu;
     public GameObject CreditsMenu;
-    public GameObject OptionsMenu;
+
+    public AudioSource soundEffect;
     // Start is called before the first frame update
     public void Start()
     {
@@ -15,23 +16,24 @@ public class SC_MainMenu : MonoBehaviour
 
     public void PlayNowButton(string scene) {
         UnityEngine.SceneManagement.SceneManager.LoadScene(scene);
+        soundEffect.Play();
     }
     public void CreditsButton() {
         MainMenu.SetActive(false);
         CreditsMenu.SetActive(true);
-        OptionsMenu.SetActive(false);
+        soundEffect.Play();
     }
     public void MainMenuButton() {
         MainMenu.SetActive(true);
         CreditsMenu.SetActive(false);
-        OptionsMenu.SetActive(false);
+    }
+    public void BackButton(){
+        MainMenu.SetActive(true);
+        CreditsMenu.SetActive(false);
+        soundEffect.Play();
     }
     public void QuitButton() {
         Application.Quit();
     }
-    public void OptionsButtons() {
-        MainMenu.SetActive(false);
-        CreditsMenu.SetActive(false);
-        OptionsMenu.SetActive(true);
-    }
+    
 }
