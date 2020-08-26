@@ -8,11 +8,11 @@
     },
     {
       "name": "Cat",
-      "line": "Meowww? *surprized*"
+      "line": "Meowww? *surprised*"
     },
     {
       "name": "Cat",
-      "line": "Ron ron (purr)"
+      "line": "Purr purr"
     },
     {
       "name": "Cat",
@@ -24,7 +24,7 @@
     },
     {
       "name": "Cat",
-      "line": "Alright, I will help you a bit more."
+      "line": "Alright, I will help you a bit."
     },
     {
       "name": "Cat",
@@ -40,7 +40,7 @@
     },
     {
       "name": "Cat",
-      "line": "I know it is beeeaaauuuuuutiful!"
+      "line": "I know it is beeeaaauuuuuutiful isn't it?"
     },
     {
       "name": "Cat",
@@ -60,7 +60,7 @@
     },
     {
       "name": "Cat",
-      "line": "Oh, by the way, I am Bastet. Sometimes I forget that some new humans do not know my name."
+      "line": "Oh, by the way, I am Bastet. Sometimes I forget that some humans do not know my name."
     },
     {
       "name": "Bastet",
@@ -68,7 +68,7 @@
     },
     {
       "name": "Bastet",
-      "line": "But I'm sure it would be impossible for such a bald adventurer."
+      "line": "But I'm sure it will be impossible for such a reckless adventurer as you."
     },
     {
       "name": "Steve",
@@ -88,7 +88,7 @@
     },
     {
       "name": "Bastet",
-      "line": "Use this power wisely and you will be able to complete in your quest. (Button Fire 2)"
+      "line": "Use this power wisely and you will be able to complete your quest. (Button Fire 2)"
     }
   ]
 }
