@@ -16,13 +16,13 @@ public class ArtifactScript : MonoBehaviour
     void Start()
     {
         meneger = GameManager.Instance;
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     // Manages whether the character is on the groud or not
@@ -37,6 +37,7 @@ public class ArtifactScript : MonoBehaviour
     IEnumerator changeScene()
     {
         meneger.GetArtifact(artifactId);
+        gameObject.GetComponent<ChangeAudio>().enabled = true;
         if (fond != null) {
             fond.SetActive(true);
 
