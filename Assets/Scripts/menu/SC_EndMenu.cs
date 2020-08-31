@@ -10,6 +10,7 @@ public class SC_EndMenu : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            GameManager.Instance.ResetGame();
             SceneManager.LoadScene(Scene);
         }
     }

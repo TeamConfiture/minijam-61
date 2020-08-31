@@ -31,6 +31,15 @@ public class GameManager : MonoBehaviour
         Instance = this;
     }
 
+    public void ResetGame()
+    {
+        Interacting = false;
+        blocPosition = false;
+        obtainedStatus[0]=false;
+        obtainedStatus[1]=false;
+        obtainedStatus[2]=false;
+    }
+
     public void GetArtifact(int artifactId) {
         Debug.Log("Obtained Artifact !");
         if (artifactId < 1 || artifactId > 3) {
