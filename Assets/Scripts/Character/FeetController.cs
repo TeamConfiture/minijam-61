@@ -23,4 +23,12 @@ public class FeetController : MonoBehaviour
             transform.parent.GetComponent<CharacterController>().FeetCollision();
         }
     }
+
+    // private void OnTriggerStay2D(Collider2D collision)
+    // {
+    //     if (collision.tag != "Player")
+    //     {
+    //         transform.parent.GetComponent<CharacterController>().FeetCollision();
+    //     }
+    // }
 }

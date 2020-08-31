@@ -28,7 +28,7 @@ public class CharacterController : MonoBehaviour
     GameManager meneger = null;
 
     bool isPressedFire2 = false;
-    Rigidbody2D rbFeet;
+    // Rigidbody2D rbFeet;
     bool onPlant;
 
     // Start is called before the first frame update
@@ -41,7 +41,7 @@ public class CharacterController : MonoBehaviour
         animator = GetComponent<Animator>();
         jumpRequest = false;
         jumpNb = 0;
-        rbFeet = transform.GetChild(0).GetComponent<Rigidbody2D>();
+        // rbFeet = transform.GetChild(0).GetComponent<Rigidbody2D>();
 
         meneger = GameManager.Instance;
         onPlant = false;
@@ -103,7 +103,11 @@ public class CharacterController : MonoBehaviour
 
         if (jumpRequest) //Jump impulsion
         {
-            rb.AddForce(Vector2.up * jumpVelocity * (rb.velocity.y < 0 ? 2 : 1), ForceMode2D.Impulse);
+            // Debug.Log(rb.velocity.y);
+            // NOTE : The line below has weird behavior when standing on the limits of platforms (rb.volicity < 0)
+            // As it was designed for double-jump, and we don't use it, we'll use a simpler version
+            //rb.AddForce(Vector2.up * jumpVelocity * (rb.velocity.y < -0.01 ? 2 : 1), ForceMode2D.Impulse);
+            rb.AddForce(Vector2.up * jumpVelocity, ForceMode2D.Impulse);
             jumpRequest = false;
         }
         if (!onPlant)
@@ -165,6 +169,9 @@ public class CharacterController : MonoBehaviour
 
     public void FeetCollision()
     {
+        // if (jumpNb != 0) {
+        //     Debug.Log("Reset !");
+        // }
         jumpNb = 0;
     }
 
