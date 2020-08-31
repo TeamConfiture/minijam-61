@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -27,9 +27,9 @@ public class CloudScript : MonoBehaviour
     void Update()
     {
         mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        if (mousePosition.y < borderTop.position.y 
-            && mousePosition.y > borderBottom.position.y 
-            && mousePosition.x < borderRight.position.x 
+        if (mousePosition.y < borderTop.position.y
+            && mousePosition.y > borderBottom.position.y
+            && mousePosition.x < borderRight.position.x
             && mousePosition.x > borderLeft.position.x
         )
         {
