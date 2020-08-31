@@ -98,6 +98,7 @@ public class CharacterController : MonoBehaviour
     // Called every physics frame
     private void FixedUpdate()
     {
+        var epsilon = 0.00000000000001;
         if (GameManager.Instance.Interacting)
             return;
 
@@ -107,7 +108,9 @@ public class CharacterController : MonoBehaviour
             // NOTE : The line below has weird behavior when standing on the limits of platforms (rb.volicity < 0)
             // As it was designed for double-jump, and we don't use it, we'll use a simpler version
             //rb.AddForce(Vector2.up * jumpVelocity * (rb.velocity.y < -0.01 ? 2 : 1), ForceMode2D.Impulse);
-            rb.AddForce(Vector2.up * jumpVelocity, ForceMode2D.Impulse);
+            // if (rb.velocity.y>-1 * epsilon) {
+                rb.AddForce(Vector2.up * jumpVelocity, ForceMode2D.Impulse);
+            // }
             jumpRequest = false;
         }
         if (!onPlant)
@@ -167,12 +170,16 @@ public class CharacterController : MonoBehaviour
         leverToInteract = null;
     }
 
-    public void FeetCollision()
+    public void FeetCollision(bool activate = true)
     {
         // if (jumpNb != 0) {
         //     Debug.Log("Reset !");
         // }
-        jumpNb = 0;
+        if (activate) {
+            jumpNb = 0;
+        } else {
+            jumpNb = 42;
+        }
     }
 
     // private void OnTriggerStay2D(Collider2D other){
