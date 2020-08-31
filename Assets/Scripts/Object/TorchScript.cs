@@ -20,19 +20,22 @@ public class TorchScript : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        if (prevState != isActive) {
-            prevState = isActive;
-            // Debug.Log("State switched !");
-            theAnim.SetBool("active", isActive); // This means for each primitve data type there's a setter.
-        }
-    }
+    // void Update()
+    // {
+    //     if (prevState != isActive) {
+    //         prevState = isActive;
+    //         // Debug.Log("State switched !");
+    //         theAnim.SetBool("active", isActive); // This means for each primitve data type there's a setter.
+    //         theAnim.Update(0);
+    //     }
+    // }
 
     // Switch State
     public void SwitchState(bool newState) {
         if (newState != isActive) {
             isActive = newState;
+            theAnim.SetBool("active", isActive); // This means for each primitve data type there's a setter.
+            theAnim.Update(0);
             // Debug.Log("State changed !");
         }
     }

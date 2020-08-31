@@ -98,7 +98,7 @@ public class CharacterController : MonoBehaviour
     // Called every physics frame
     private void FixedUpdate()
     {
-        var epsilon = 0.00000000000001;
+        // var epsilon = 0.00000000000001;
         if (GameManager.Instance.Interacting)
             return;
 
