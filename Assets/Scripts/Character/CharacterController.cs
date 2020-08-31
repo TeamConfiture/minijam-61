@@ -48,6 +48,9 @@ public class CharacterController : MonoBehaviour
     }
 
     private void Update() {
+        if (GameManager.Instance.Interacting)
+            return; 
+
         if ((rb.velocity.y < 0.01f) && (rb.velocity.y > -0.01f)) {
             animator.SetFloat("SpeedY", 0.0f);
         } else if (rb.velocity.y > 0) {
@@ -95,6 +98,9 @@ public class CharacterController : MonoBehaviour
     // Called every physics frame
     private void FixedUpdate()
     {
+        if (GameManager.Instance.Interacting)
+            return;
+
         if (jumpRequest) //Jump impulsion
         {
             rb.AddForce(Vector2.up * jumpVelocity * (rb.velocity.y < 0 ? 2 : 1), ForceMode2D.Impulse);
