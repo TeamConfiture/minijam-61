@@ -50,25 +50,9 @@ public class CharacterController : MonoBehaviour
     private void Update() {
         if (GameManager.Instance.Interacting)
             return; 
-
-        /*if ((rb.velocity.y < 0.01f) && (rb.velocity.y > -0.01f)) {
-            animator.SetFloat("SpeedY", 0.0f);
-        } else if (rb.velocity.y > 0) {
-            animator.SetFloat("SpeedY", 1.0f);
-        } else {
-            animator.SetFloat("SpeedY", -1.0f);
-        }*/
 		
-		animator.SetFloat("SpeedY", rb.velocity.y);
 		
 		animator.SetBool("fly", jumpNb > 0);
-        /*if ((Input.GetAxis("Horizontal") < 0.01f) && (Input.GetAxis("Horizontal") > -0.01f)) {
-            animator.SetFloat("SpeedX", 0.0f);
-        } else if (Input.GetAxis("Horizontal") > 0) {
-            animator.SetFloat("SpeedX", 1.0f);
-        } else {
-            animator.SetFloat("SpeedX", -1.0f);
-        }*/
 		animator.SetFloat("SpeedX", Input.GetAxis("Horizontal"));
 
         if (Input.GetButtonDown ("Jump") && jumpNb < maxJumpNumber)
