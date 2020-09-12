@@ -13,7 +13,6 @@ public class CloudScript : MonoBehaviour
     private bool isRaining;
     private GameObject rain;
     private Vector3 mousePosition;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -26,21 +25,19 @@ public class CloudScript : MonoBehaviour
     void Update()
     {
         mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        if (mousePosition.y < borderTop.position.y 
-            && mousePosition.y > borderBottom.position.y 
-            && mousePosition.x < borderRight.position.x 
+        if (mousePosition.y < borderTop.position.y
+            && mousePosition.y > borderBottom.position.y
+            && mousePosition.x < borderRight.position.x
             && mousePosition.x > borderLeft.position.x
         )
         {
             transform.position = Vector2.Lerp(transform.position, mousePosition, 0.1f);
         }
 
-        if (Input.GetButton("Fire1"))
+        isRaining = false;
+        if (Input.GetButton("Fire1") && !GameManager.Instance.Interacting)
         {
             isRaining = true;
-        } else
-        {
-            isRaining = false;
         }
         rain.SetActive(isRaining);
     }

@@ -34,7 +34,7 @@ public class DialogueManager : MonoBehaviour
 
         if (Dial.leftImage != null)
         {
-            Debug.Log(Dial.leftImage);
+            // Debug.Log(Dial.leftImage);
             Sprite sprite = Resources.Load<Sprite>(Dial.leftImage);
             leftImage.sprite = sprite;
             leftImage.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, Screen.width / 5);

@@ -28,7 +28,7 @@ public class Interactable : MonoBehaviour
 
     public void MakeInteractable(bool interactable)
     {
-        GameManager.Instance.Interacting = interactable;
+        // GameManager.Instance.Interacting = interactable;
         Interacting = interactable;
 
         if (InteractionPopup != null)

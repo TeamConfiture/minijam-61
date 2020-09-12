@@ -28,7 +28,7 @@ public class CharacterController : MonoBehaviour
     GameManager meneger = null;
 
     bool isPressedFire2 = false;
-    Rigidbody2D rbFeet;
+    // Rigidbody2D rbFeet;
     bool onPlant;
 
     // Start is called before the first frame update
@@ -41,13 +41,16 @@ public class CharacterController : MonoBehaviour
         animator = GetComponent<Animator>();
         jumpRequest = false;
         jumpNb = 0;
-        rbFeet = transform.GetChild(0).GetComponent<Rigidbody2D>();
+        // rbFeet = transform.GetChild(0).GetComponent<Rigidbody2D>();
 
         meneger = GameManager.Instance;
         onPlant = false;
     }
 
     private void Update() {
+        if (GameManager.Instance.Interacting)
+            return; 
+
         if ((rb.velocity.y < 0.01f) && (rb.velocity.y > -0.01f)) {
             animator.SetFloat("SpeedY", 0.0f);
         } else if (rb.velocity.y > 0) {
@@ -95,9 +98,19 @@ public class CharacterController : MonoBehaviour
     // Called every physics frame
     private void FixedUpdate()
     {
+        // var epsilon = 0.00000000000001;
+        if (GameManager.Instance.Interacting)
+            return;
+
         if (jumpRequest) //Jump impulsion
         {
-            rb.AddForce(Vector2.up * jumpVelocity * (rb.velocity.y < 0 ? 2 : 1), ForceMode2D.Impulse);
+            // Debug.Log(rb.velocity.y);
+            // NOTE : The line below has weird behavior when standing on the limits of platforms (rb.volicity < 0)
+            // As it was designed for double-jump, and we don't use it, we'll use a simpler version
+            //rb.AddForce(Vector2.up * jumpVelocity * (rb.velocity.y < -0.01 ? 2 : 1), ForceMode2D.Impulse);
+            // if (rb.velocity.y>-1 * epsilon) {
+                rb.AddForce(Vector2.up * jumpVelocity, ForceMode2D.Impulse);
+            // }
             jumpRequest = false;
         }
         if (!onPlant)
@@ -157,9 +170,16 @@ public class CharacterController : MonoBehaviour
         leverToInteract = null;
     }
 
-    public void FeetCollision()
+    public void FeetCollision(bool activate = true)
     {
-        jumpNb = 0;
+        // if (jumpNb != 0) {
+        //     Debug.Log("Reset !");
+        // }
+        if (activate) {
+            jumpNb = 0;
+        } else {
+            jumpNb = 42;
+        }
     }
 
     // private void OnTriggerStay2D(Collider2D other){
